@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Glacia develops advanced technologies for energy efficiency, thermal management, and extreme environments." />
+  <title>Glacia | Advanced Technology</title>
+  <style>
+    :root{
+      --bg:#07131f;
+      --bg2:#0b2235;
+      --card:rgba(255,255,255,.07);
+      --line:rgba(255,255,255,.13);
+      --text:#f5fbff;
+      --muted:#b9cad7;
+      --accent:#8ee7ff;
+      --accent2:#d7f8ff;
+      --max:1120px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at 80% 10%, rgba(116,219,255,.16), transparent 32%),
+        radial-gradient(circle at 15% 30%, rgba(63,141,194,.14), transparent 28%),
+        linear-gradient(180deg,var(--bg),var(--bg2));
+      line-height:1.6;
+    }
+    a{color:inherit;text-decoration:none}
+    .wrap{width:min(var(--max), calc(100% - 40px));margin:auto}
+    nav{
+      position:sticky;top:0;z-index:50;
+      backdrop-filter:blur(14px);
+      background:rgba(7,19,31,.72);
+      border-bottom:1px solid var(--line);
+    }
+    .nav-inner{
+      height:70px;display:flex;align-items:center;justify-content:space-between;gap:24px;
+    }
+    .brand{
+      display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.04em;font-size:1.2rem;
+    }
+    .mark{
+      width:34px;height:34px;border-radius:10px;
+      background:linear-gradient(145deg,#e7fbff,#8ee7ff 42%,#26799e);
+      box-shadow:0 0 28px rgba(142,231,255,.25);
+      position:relative;overflow:hidden;
+    }
+    .mark:after{
+      content:"";position:absolute;inset:8px 5px 6px 11px;
+      border-left:3px solid rgba(7,19,31,.75);
+      border-bottom:3px solid rgba(7,19,31,.75);
+      transform:skew(-18deg) rotate(-18deg);
+      border-radius:2px;
+    }
+    .links{display:flex;gap:24px;color:var(--muted);font-size:.95rem}
+    .links a:hover{color:var(--text)}
+    .hero{
+      min-height:78vh;display:grid;grid-template-columns:1.2fr .8fr;align-items:center;gap:60px;
+      padding:90px 0 70px;
+    }
+    .eyebrow{
+      display:inline-flex;align-items:center;gap:8px;
+      border:1px solid var(--line);background:rgba(255,255,255,.04);
+      padding:7px 12px;border-radius:999px;color:var(--accent2);font-size:.85rem;
+    }
+    .dot{width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 14px var(--accent)}
+    h1{font-size:clamp(3.2rem,8vw,7rem);line-height:.95;margin:24px 0 20px;letter-spacing:-.055em}
+    .hero p{font-size:1.2rem;color:var(--muted);max-width:680px;margin:0 0 30px}
+    .cta-row{display:flex;flex-wrap:wrap;gap:12px}
+    .btn{
+      padding:13px 18px;border-radius:12px;border:1px solid var(--line);font-weight:650;
+      transition:.2s ease;display:inline-block;
+    }
+    .btn.primary{background:var(--accent);color:#062033;border-color:transparent}
+    .btn:hover{transform:translateY(-2px)}
+    .visual{
+      position:relative;aspect-ratio:1/1;border-radius:36px;border:1px solid var(--line);
+      background:
+        radial-gradient(circle at 33% 32%, rgba(220,249,255,.95) 0 3%, transparent 4%),
+        radial-gradient(circle at 60% 40%, rgba(142,231,255,.7), transparent 18%),
+        radial-gradient(circle at 50% 65%, rgba(67,139,176,.85), transparent 34%),
+        linear-gradient(145deg,rgba(255,255,255,.09),rgba(255,255,255,.02));
+      overflow:hidden;
+      box-shadow:0 30px 80px rgba(0,0,0,.26);
+    }
+    .visual:before,.visual:after{
+      content:"";position:absolute;border:1px solid rgba(215,248,255,.28);border-radius:50%;
+      inset:18%;transform:rotate(25deg);
+    }
+    .visual:after{inset:29% 11%;transform:rotate(-38deg)}
+    .visual-label{
+      position:absolute;left:24px;bottom:22px;color:var(--accent2);font-size:.84rem;
+      letter-spacing:.12em;text-transform:uppercase
+    }
+    section{padding:90px 0}
+    .section-head{max-width:760px;margin-bottom:36px}
+    .kicker{color:var(--accent);font-size:.82rem;font-weight:750;letter-spacing:.13em;text-transform:uppercase}
+    h2{font-size:clamp(2rem,4vw,3.4rem);line-height:1.08;margin:10px 0 14px;letter-spacing:-.035em}
+    .section-head p{color:var(--muted);font-size:1.08rem}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{
+      padding:28px;border:1px solid var(--line);border-radius:20px;background:var(--card);
+      min-height:250px;transition:.2s ease;
+    }
+    .card:hover{transform:translateY(-4px);border-color:rgba(142,231,255,.38)}
+    .num{color:var(--accent);font-weight:750;font-size:.82rem;letter-spacing:.12em}
+    .card h3{font-size:1.35rem;margin:42px 0 10px}
+    .card p{color:var(--muted);margin:0}
+    .about{
+      display:grid;grid-template-columns:.85fr 1.15fr;gap:64px;align-items:start;
+      border-top:1px solid var(--line)
+    }
+    .about p{color:var(--muted);font-size:1.08rem}
+    .contact{
+      border:1px solid var(--line);border-radius:26px;padding:44px;
+      background:linear-gradient(135deg,rgba(142,231,255,.09),rgba(255,255,255,.03));
+      display:flex;justify-content:space-between;align-items:center;gap:30px
+    }
+    .contact p{margin:8px 0 0;color:var(--muted)}
+    footer{padding:30px 0 45px;color:#8fa5b5;font-size:.9rem}
+    @media (max-width:800px){
+      .links{display:none}
+      .hero{grid-template-columns:1fr;padding-top:65px}
+      .visual{max-width:520px}
+      .grid{grid-template-columns:1fr}
+      .about{grid-template-columns:1fr;gap:15px}
+      .contact{align-items:flex-start;flex-direction:column}
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="wrap nav-inner">
+      <a class="brand" href="#top"><span class="mark"></span><span>GLACIA</span></a>
+      <div class="links">
+        <a href="#technologies">Technologies</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="top">
+    <div class="wrap hero">
+      <div>
+        <span class="eyebrow"><span class="dot"></span>Advanced technology for a changing thermal world</span>
+        <h1>Control heat.<br>Protect what matters.</h1>
+        <p>
+          Glacia develops practical technologies for energy efficiency, advanced thermal management,
+          and demanding high-temperature environments.
+        </p>
+        <div class="cta-row">
+          <a class="btn primary" href="#technologies">Explore Technologies</a>
+          <a class="btn" href="#contact">Contact Us</a>
+        </div>
+      </div>
+      <div class="visual" aria-label="Abstract thermal technology graphic">
+        <div class="visual-label">Energy • Materials • Extreme Environments</div>
+      </div>
+    </div>
+
+    <section id="technologies">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="kicker">Technology Areas</div>
+          <h2>From buildings to semiconductors to aerospace.</h2>
+          <p>
+            Our platform spans thermal diagnostics, advanced materials, and protection technologies
+            across multiple scales and operating environments.
+          </p>
+        </div>
+        <div class="grid">
+          <article class="card">
+            <div class="num">01</div>
+            <h3>Building Air-Leak Detection</h3>
+            <p>
+              Fast, practical approaches for identifying unwanted air leakage and improving
+              building energy performance, comfort, and envelope diagnostics.
+            </p>
+          </article>
+          <article class="card">
+            <div class="num">02</div>
+            <h3>Semiconductor Thermal Materials</h3>
+            <p>
+              Advanced molding-compound and packaging materials designed to improve heat dissipation,
+              thermal reliability, and next-generation electronics performance.
+            </p>
+          </article>
+          <article class="card">
+            <div class="num">03</div>
+            <h3>High-Temperature Protection</h3>
+            <p>
+              Materials and thermal-protection concepts for aerospace and other extreme-temperature
+              environments where reliability under heat is critical.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="wrap about">
+        <div>
+          <div class="kicker">About Glacia</div>
+          <h2>Science translated into useful technology.</h2>
+        </div>
+        <div>
+          <p>
+            Glacia is an early-stage technology company focused on turning advanced research in heat transfer,
+            materials, and energy systems into practical solutions.
+          </p>
+          <p>
+            Our initial commercialization focus is building air-leak detection, with a broader technology
+            roadmap spanning semiconductor thermal management and high-temperature aerospace materials.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap">
+        <div class="contact">
+          <div>
+            <div class="kicker">Contact</div>
+            <h2 style="margin-bottom:0">Interested in working with Glacia?</h2>
+            <p>Partnerships, technology development, and commercialization inquiries are welcome.</p>
+          </div>
+          <a class="btn primary" href="mailto:YOUR_EMAIL_HERE">Email Glacia</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">© 2026 Glacia LLC. All rights reserved.</div>
+  </footer>
+</body>
+</html>
