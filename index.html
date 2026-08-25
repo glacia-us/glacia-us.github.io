@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Glacia develops advanced technologies for energy efficiency, thermal management, and extreme environments." />
-  <title>Glacia | Advanced Technology</title>
+  <meta name="description" content="Glacia develops practical technologies for building energy efficiency, beginning with advanced air-leak detection." />
+  <title>Glacia | Building Energy Technology</title>
   <style>
     :root{
       --bg:#07131f;
@@ -58,76 +58,181 @@
     }
     .links{display:flex;gap:24px;color:var(--muted);font-size:.95rem}
     .links a:hover{color:var(--text)}
+
     .hero{
-      min-height:78vh;display:grid;grid-template-columns:1.2fr .8fr;align-items:center;gap:60px;
+      min-height:78vh;
+      display:grid;
+      grid-template-columns:1.15fr .85fr;
+      align-items:center;
+      gap:60px;
       padding:90px 0 70px;
     }
     .eyebrow{
       display:inline-flex;align-items:center;gap:8px;
-      border:1px solid var(--line);background:rgba(255,255,255,.04);
-      padding:7px 12px;border-radius:999px;color:var(--accent2);font-size:.85rem;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.04);
+      padding:7px 12px;border-radius:999px;
+      color:var(--accent2);font-size:.85rem;
     }
     .dot{width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 14px var(--accent)}
-    h1{font-size:clamp(3.2rem,8vw,7rem);line-height:.95;margin:24px 0 20px;letter-spacing:-.055em}
-    .hero p{font-size:1.2rem;color:var(--muted);max-width:680px;margin:0 0 30px}
+    h1{
+      font-size:clamp(3.1rem,7vw,6.8rem);
+      line-height:.96;
+      margin:24px 0 20px;
+      letter-spacing:-.055em;
+    }
+    .hero p{
+      font-size:1.18rem;color:var(--muted);
+      max-width:700px;margin:0 0 30px;
+    }
     .cta-row{display:flex;flex-wrap:wrap;gap:12px}
     .btn{
-      padding:13px 18px;border-radius:12px;border:1px solid var(--line);font-weight:650;
-      transition:.2s ease;display:inline-block;
+      padding:13px 18px;border-radius:12px;border:1px solid var(--line);
+      font-weight:650;transition:.2s ease;display:inline-block;
     }
     .btn.primary{background:var(--accent);color:#062033;border-color:transparent}
     .btn:hover{transform:translateY(-2px)}
+
     .visual{
-      position:relative;aspect-ratio:1/1;border-radius:36px;border:1px solid var(--line);
+      position:relative;aspect-ratio:1/1;
+      border-radius:36px;border:1px solid var(--line);
       background:
-        radial-gradient(circle at 33% 32%, rgba(220,249,255,.95) 0 3%, transparent 4%),
-        radial-gradient(circle at 60% 40%, rgba(142,231,255,.7), transparent 18%),
-        radial-gradient(circle at 50% 65%, rgba(67,139,176,.85), transparent 34%),
+        radial-gradient(circle at 30% 28%, rgba(220,249,255,.98) 0 2.5%, transparent 3.5%),
+        radial-gradient(circle at 66% 37%, rgba(142,231,255,.70), transparent 17%),
+        radial-gradient(circle at 48% 68%, rgba(67,139,176,.85), transparent 34%),
         linear-gradient(145deg,rgba(255,255,255,.09),rgba(255,255,255,.02));
       overflow:hidden;
       box-shadow:0 30px 80px rgba(0,0,0,.26);
     }
-    .visual:before,.visual:after{
-      content:"";position:absolute;border:1px solid rgba(215,248,255,.28);border-radius:50%;
-      inset:18%;transform:rotate(25deg);
+    .visual:before,
+    .visual:after{
+      content:"";position:absolute;
+      border:1px solid rgba(215,248,255,.28);
+      border-radius:50%;
+      inset:18%;
+      transform:rotate(25deg);
     }
     .visual:after{inset:29% 11%;transform:rotate(-38deg)}
-    .visual-label{
-      position:absolute;left:24px;bottom:22px;color:var(--accent2);font-size:.84rem;
-      letter-spacing:.12em;text-transform:uppercase
+    .flow-line{
+      position:absolute;height:2px;
+      background:linear-gradient(90deg,transparent,rgba(215,248,255,.9),transparent);
+      width:72%;left:14%;opacity:.75;
+      animation:drift 4s ease-in-out infinite;
     }
+    .flow1{top:34%}
+    .flow2{top:48%;animation-delay:.8s}
+    .flow3{top:62%;animation-delay:1.6s}
+    @keyframes drift{
+      0%,100%{transform:translateX(-8px);opacity:.3}
+      50%{transform:translateX(8px);opacity:.9}
+    }
+    .visual-label{
+      position:absolute;left:24px;bottom:22px;
+      color:var(--accent2);font-size:.84rem;
+      letter-spacing:.12em;text-transform:uppercase;
+    }
+
     section{padding:90px 0}
     .section-head{max-width:760px;margin-bottom:36px}
-    .kicker{color:var(--accent);font-size:.82rem;font-weight:750;letter-spacing:.13em;text-transform:uppercase}
-    h2{font-size:clamp(2rem,4vw,3.4rem);line-height:1.08;margin:10px 0 14px;letter-spacing:-.035em}
+    .kicker{
+      color:var(--accent);font-size:.82rem;
+      font-weight:750;letter-spacing:.13em;text-transform:uppercase;
+    }
+    h2{
+      font-size:clamp(2rem,4vw,3.4rem);
+      line-height:1.08;margin:10px 0 14px;
+      letter-spacing:-.035em;
+    }
     .section-head p{color:var(--muted);font-size:1.08rem}
-    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+
+    .feature{
+      display:grid;
+      grid-template-columns:1.15fr .85fr;
+      gap:26px;
+      align-items:stretch;
+    }
+    .feature-main,.feature-side{
+      border:1px solid var(--line);
+      border-radius:22px;
+      background:var(--card);
+      padding:34px;
+    }
+    .feature-main h3{font-size:2rem;margin:8px 0 12px}
+    .feature-main p,.feature-side p{color:var(--muted);margin:0}
+    .tag{
+      display:inline-block;
+      color:var(--accent2);
+      font-size:.8rem;
+      font-weight:750;
+      letter-spacing:.10em;
+      text-transform:uppercase;
+    }
+    .feature-side{
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      gap:24px;
+    }
+    .metric{
+      border-top:1px solid var(--line);
+      padding-top:18px;
+      color:var(--muted);
+    }
+
+    .use-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+    }
     .card{
-      padding:28px;border:1px solid var(--line);border-radius:20px;background:var(--card);
-      min-height:250px;transition:.2s ease;
+      padding:28px;border:1px solid var(--line);
+      border-radius:20px;background:var(--card);
+      min-height:225px;transition:.2s ease;
     }
     .card:hover{transform:translateY(-4px);border-color:rgba(142,231,255,.38)}
     .num{color:var(--accent);font-weight:750;font-size:.82rem;letter-spacing:.12em}
-    .card h3{font-size:1.35rem;margin:42px 0 10px}
+    .card h3{font-size:1.3rem;margin:36px 0 10px}
     .card p{color:var(--muted);margin:0}
-    .about{
-      display:grid;grid-template-columns:.85fr 1.15fr;gap:64px;align-items:start;
-      border-top:1px solid var(--line)
+
+    .vision{
+      border-top:1px solid var(--line);
+      display:grid;
+      grid-template-columns:.85fr 1.15fr;
+      gap:64px;
+      align-items:start;
     }
-    .about p{color:var(--muted);font-size:1.08rem}
+    .vision p{color:var(--muted);font-size:1.08rem}
+    .future{
+      margin-top:26px;
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:14px;
+    }
+    .future div{
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:18px;
+      background:rgba(255,255,255,.035);
+      color:var(--muted);
+    }
+    .future strong{color:var(--text);display:block;margin-bottom:5px}
+
     .contact{
-      border:1px solid var(--line);border-radius:26px;padding:44px;
+      border:1px solid var(--line);
+      border-radius:26px;padding:44px;
       background:linear-gradient(135deg,rgba(142,231,255,.09),rgba(255,255,255,.03));
-      display:flex;justify-content:space-between;align-items:center;gap:30px
+      display:flex;justify-content:space-between;align-items:center;gap:30px;
     }
     .contact p{margin:8px 0 0;color:var(--muted)}
+
     footer{padding:30px 0 45px;color:#8fa5b5;font-size:.9rem}
+
     @media (max-width:800px){
       .links{display:none}
-      .hero{grid-template-columns:1fr;padding-top:65px}
+      .hero,.feature,.vision{grid-template-columns:1fr}
+      .hero{padding-top:65px}
       .visual{max-width:520px}
-      .grid{grid-template-columns:1fr}
-      .about{grid-template-columns:1fr;gap:15px}
+      .use-grid,.future{grid-template-columns:1fr}
       .contact{align-items:flex-start;flex-direction:column}
     }
   </style>
@@ -135,10 +240,14 @@
 <body>
   <nav>
     <div class="wrap nav-inner">
-      <a class="brand" href="#top"><span class="mark"></span><span>GLACIA</span></a>
+      <a class="brand" href="#top">
+        <span class="mark"></span>
+        <span>GLACIA</span>
+      </a>
       <div class="links">
-        <a href="#technologies">Technologies</a>
-        <a href="#about">About</a>
+        <a href="#technology">Technology</a>
+        <a href="#applications">Applications</a>
+        <a href="#vision">Vision</a>
         <a href="#contact">Contact</a>
       </div>
     </div>
@@ -147,76 +256,131 @@
   <main id="top">
     <div class="wrap hero">
       <div>
-        <span class="eyebrow"><span class="dot"></span>Advanced technology for a changing thermal world</span>
-        <h1>Control heat.<br>Protect what matters.</h1>
+        <span class="eyebrow">
+          <span class="dot"></span>
+          Building energy technology
+        </span>
+        <h1>Find the leaks.<br>Save the energy.</h1>
         <p>
-          Glacia develops practical technologies for energy efficiency, advanced thermal management,
-          and demanding high-temperature environments.
+          Glacia develops practical technology for identifying unwanted air leakage in buildings,
+          helping improve energy efficiency, comfort, and building-envelope performance.
         </p>
         <div class="cta-row">
-          <a class="btn primary" href="#technologies">Explore Technologies</a>
-          <a class="btn" href="#contact">Contact Us</a>
+          <a class="btn primary" href="#technology">Our Technology</a>
+          <a class="btn" href="#contact">Contact Glacia</a>
         </div>
       </div>
-      <div class="visual" aria-label="Abstract thermal technology graphic">
-        <div class="visual-label">Energy • Materials • Extreme Environments</div>
+
+      <div class="visual" aria-label="Abstract airflow and building-energy graphic">
+        <div class="flow-line flow1"></div>
+        <div class="flow-line flow2"></div>
+        <div class="flow-line flow3"></div>
+        <div class="visual-label">Detection • Diagnostics • Energy Efficiency</div>
       </div>
     </div>
 
-    <section id="technologies">
+    <section id="technology">
       <div class="wrap">
         <div class="section-head">
-          <div class="kicker">Technology Areas</div>
-          <h2>From buildings to semiconductors to aerospace.</h2>
+          <div class="kicker">Current Commercialization Focus</div>
+          <h2>Building air-leak detection.</h2>
           <p>
-            Our platform spans thermal diagnostics, advanced materials, and protection technologies
-            across multiple scales and operating environments.
+            Air leakage can increase heating and cooling loads, reduce comfort, and make building
+            performance harder to diagnose. Glacia is developing tools to make leakage detection
+            faster, more practical, and easier to deploy.
           </p>
         </div>
-        <div class="grid">
+
+        <div class="feature">
+          <article class="feature-main">
+            <span class="tag">Core Technology</span>
+            <h3>Locate unwanted airflow with greater speed and clarity.</h3>
+            <p>
+              Our focus is on practical building-envelope diagnostics that can help identify where
+              uncontrolled air exchange occurs, support targeted remediation, and reduce wasted
+              heating and cooling energy.
+            </p>
+          </article>
+
+          <aside class="feature-side">
+            <div>
+              <span class="tag">Why It Matters</span>
+              <p style="margin-top:10px">
+                Better air-leak detection can support energy retrofits, commissioning,
+                weatherization, maintenance, and building-performance improvement.
+              </p>
+            </div>
+            <div class="metric">
+              Designed around practical deployment and real-world building diagnostics.
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section id="applications">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="kicker">Applications</div>
+          <h2>Useful across the building lifecycle.</h2>
+        </div>
+
+        <div class="use-grid">
           <article class="card">
             <div class="num">01</div>
-            <h3>Building Air-Leak Detection</h3>
+            <h3>Energy Audits</h3>
             <p>
-              Fast, practical approaches for identifying unwanted air leakage and improving
-              building energy performance, comfort, and envelope diagnostics.
+              Support identification of envelope leakage that contributes to unnecessary heating
+              and cooling demand.
             </p>
           </article>
+
           <article class="card">
             <div class="num">02</div>
-            <h3>Semiconductor Thermal Materials</h3>
+            <h3>Retrofits & Weatherization</h3>
             <p>
-              Advanced molding-compound and packaging materials designed to improve heat dissipation,
-              thermal reliability, and next-generation electronics performance.
+              Help prioritize sealing work and evaluate where improvements can have the greatest value.
             </p>
           </article>
+
           <article class="card">
             <div class="num">03</div>
-            <h3>High-Temperature Protection</h3>
+            <h3>Building Diagnostics</h3>
             <p>
-              Materials and thermal-protection concepts for aerospace and other extreme-temperature
-              environments where reliability under heat is critical.
+              Provide actionable information for commissioning, troubleshooting, comfort,
+              and performance assessment.
             </p>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="about">
-      <div class="wrap about">
+    <section id="vision">
+      <div class="wrap vision">
         <div>
-          <div class="kicker">About Glacia</div>
-          <h2>Science translated into useful technology.</h2>
+          <div class="kicker">Broader Vision</div>
+          <h2>Built to grow beyond one technology.</h2>
         </div>
+
         <div>
           <p>
-            Glacia is an early-stage technology company focused on turning advanced research in heat transfer,
-            materials, and energy systems into practical solutions.
+            Glacia is beginning with building air-leak detection because it is our current
+            commercialization focus. Over time, we intend to explore additional technologies
+            related to thermal management, advanced materials, and extreme environments.
           </p>
-          <p>
-            Our initial commercialization focus is building air-leak detection, with a broader technology
-            roadmap spanning semiconductor thermal management and high-temperature aerospace materials.
-          </p>
+
+          <div class="future">
+            <div>
+              <strong>Advanced Thermal Materials</strong>
+              Future opportunities may include materials for electronics and semiconductor
+              thermal management.
+            </div>
+            <div>
+              <strong>Extreme-Temperature Materials</strong>
+              We may also explore materials and protection concepts for demanding
+              high-temperature environments.
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -227,9 +391,12 @@
           <div>
             <div class="kicker">Contact</div>
             <h2 style="margin-bottom:0">Interested in working with Glacia?</h2>
-            <p>Partnerships, technology development, and commercialization inquiries are welcome.</p>
+            <p>
+              We welcome conversations about building-energy applications, partnerships,
+              pilot opportunities, and commercialization.
+            </p>
           </div>
-          <a class="btn primary" href="mailto:YOUR_EMAIL_HERE">Email Glacia</a>
+          <a class="btn primary" href="mailto:info.glaciallc@gmail.com">Email Glacia</a>
         </div>
       </div>
     </section>
