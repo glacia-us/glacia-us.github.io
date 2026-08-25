@@ -81,6 +81,45 @@
     .future div{border:1px solid var(--line);border-radius:16px;padding:18px;background:rgba(255,255,255,.035);color:var(--muted)}
     .future strong{color:var(--text);display:block;margin-bottom:5px}
 
+
+    .story-shell{
+      border:1px solid var(--line);
+      border-radius:26px;
+      background:
+        radial-gradient(circle at 88% 12%,rgba(142,231,255,.12),transparent 30%),
+        linear-gradient(135deg,rgba(255,255,255,.055),rgba(255,255,255,.025));
+      padding:42px;
+    }
+    .story-shell p{
+      color:var(--muted);
+      font-size:1.06rem;
+      margin:0 0 18px;
+    }
+    .story-shell p:last-child{margin-bottom:0}
+    .story-values{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin:26px 0;
+    }
+    .story-values span{
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.04);
+      color:var(--accent2);
+      padding:8px 12px;
+      border-radius:999px;
+      font-size:.88rem;
+      font-weight:650;
+    }
+    .story-close{
+      margin-top:28px;
+      padding-top:24px;
+      border-top:1px solid var(--line);
+      font-size:1.16rem !important;
+      color:var(--text) !important;
+      font-weight:700;
+    }
+
     .team-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;align-items:stretch}
     .team-card{border:1px solid var(--line);border-radius:22px;background:var(--card);overflow:hidden;display:grid;grid-template-columns:190px 1fr;min-height:340px}
     .team-photo{width:100%;height:100%;object-fit:cover;min-height:340px}
@@ -102,6 +141,7 @@
       .use-grid,.future,.team-grid{grid-template-columns:1fr}
       .team-card{grid-template-columns:1fr}
       .team-photo{height:auto;min-height:0;aspect-ratio:1/1}
+      .story-shell{padding:28px}
       .contact{align-items:flex-start;flex-direction:column}
     }
   </style>
@@ -114,6 +154,7 @@
         <a href="#technology">Technology</a>
         <a href="#applications">Applications</a>
         <a href="#vision">Vision</a>
+        <a href="#story">Story</a>
         <a href="#team">Team</a>
         <a href="#contact">Contact</a>
       </div>
@@ -209,6 +250,58 @@
       </div>
     </section>
 
+
+    <section id="story">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="kicker">Our Story</div>
+          <h2>The story behind Glacia.</h2>
+        </div>
+
+        <div class="story-shell">
+          <p>
+            <strong style="color:var(--text)">Glacia</strong> is inspired by glaciers—powerful symbols
+            of purity, resilience, and the delicate balance of our planet.
+          </p>
+
+          <p>
+            To us, glaciers represent more than ice. They remind us of the importance of protecting
+            our environment, conserving energy, and advancing cleaner technologies. This vision is
+            closely connected to our mission: developing technologies that reduce energy waste,
+            improve efficiency, and enable a more sustainable future.
+          </p>
+
+          <p>
+            Glacia also represents <strong style="color:var(--text)">thermal control</strong>.
+            The cold and enduring nature of glaciers reflects our pursuit of advanced solutions for
+            managing heat—from energy-efficient buildings and cooling systems to semiconductor thermal
+            management and technologies for extreme environments such as aerospace and nuclear energy.
+          </p>
+
+          <div class="story-values" aria-label="Glacia values">
+            <span>Purity</span>
+            <span>Clarity</span>
+            <span>Calmness</span>
+            <span>Resilience</span>
+            <span>Strength</span>
+            <span>Independence</span>
+          </div>
+
+          <p>
+            Beyond technology, the name carries qualities we value. These principles shape how we
+            approach innovation—through clear thinking, rigorous science, and technologies built to
+            make a lasting impact.
+          </p>
+
+          <p class="story-close">
+            Glacia stands for a future where better control of heat leads to better use of energy—and
+            a cleaner, more sustainable world.
+          </p>
+        </div>
+      </div>
+    </section>
+
+
     <section id="team">
       <div class="wrap">
         <div class="section-head">
@@ -221,7 +314,7 @@
         </div>
 
         <div class="team-grid">
-          <article class="team-card">
+            <article class="team-card">
             <img class="team-photo" src="noel-jensen.jpg" alt="Noel Jensen" />
             <div class="team-copy">
               <h3>Noel Jensen</h3>
